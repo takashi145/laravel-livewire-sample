@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Livewire\LoginForm;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return view('app');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    });
+});
+
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', LoginForm::class);
 });

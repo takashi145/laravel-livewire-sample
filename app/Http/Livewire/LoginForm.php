@@ -16,7 +16,7 @@ class LoginForm extends Component
     /**
      * ログイン処理
      */
-    public function login(): RedirectResponse
+    public function login()
     {
         $this->validate([
             'email' => 'required|email',

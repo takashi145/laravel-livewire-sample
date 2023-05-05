@@ -31,7 +31,7 @@ class RegisterForm extends Component
     /**
      * ユーザー登録処理
      */
-    public function register(): RedirectResponse
+    public function register()
     {
         $this->validate();
 

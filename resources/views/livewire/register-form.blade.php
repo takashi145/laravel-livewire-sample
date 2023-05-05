@@ -1,35 +1,27 @@
 <div>
     <form wire:submit.prevent="register" class="py-3">
         <div class="mb-4">
-            <label for="name" class="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2">{{ __('Name') }}</label>
-            <input type="text" class="shadow appearance-none border rounded @error('name') border-red-500 @enderror w-full py-3 px-3 text-gray-700  leading-tight focus:ring-2 focus:outline-none focus:shadow-outline" id="name" placeholder="ユーザ名を入力してください" wire:model.debounce.500ms="name" required>
-            @error('name')
-                <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
-            @enderror
+            <x-label for="name">{{ __('Name') }}</x-label>
+            <x-input type="text" id="name" placeholder="ユーザ名を入力してください" wire:model.debounce.500ms="name" required />
+            <x-input-error :messages="$errors->get('name')" />
         </div>
 
         <div class="mb-4">
-            <label for="email" class="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2">{{ __('Email') }}</label>
-            <input type="email" class="shadow appearance-none border rounded @error('email') border-red-500 @enderror w-full py-3 px-3 text-gray-700  leading-tight focus:ring-2 focus:outline-none focus:shadow-outline" id="email" placeholder="メールアドレスを入力してください" wire:model.debounce.500ms="email" required>
-            @error('email')
-                <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
-            @enderror
+            <x-label for="email">{{ __('Email') }}</x-label>
+            <x-input type="email" id="email" placeholder="メールアドレスを入力してください" wire:model.debounce.500ms="email" required />
+            <x-input-error :messages="$errors->get('email')" />
         </div>
 
         <div class="mb-4">
-            <label for="password" class="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2">{{ __('Password') }}</label>
-            <input type="password" class="shadow appearance-none border rounded @error('password') border-red-500 @enderror  w-full py-3 px-3 text-gray-700 leading-tight focus:ring-2 focus:outline-none focus:shadow-outline" id="password" placeholder="パスワードを入力してください" wire:model="password" required>
-            @error('password')
-                <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
-            @enderror
+            <x-label for="password">{{ __('Password') }}</x-label>
+            <x-input type="password" id="password" placeholder="パスワードを入力してください" wire:model="password" required />
+            <x-input-error :messages="$errors->get('password')" />
         </div>
 
         <div class="mb-6">
-            <label for="password" class="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2">{{ __('Confirm Password') }}</label>
-            <input type="password" class="shadow appearance-none border rounded @error('password_confirmation') border-red-500 @enderror  w-full py-3 px-3 text-gray-700 leading-tight focus:ring-2 focus:outline-none focus:shadow-outline" id="password_confirmation" placeholder="パスワードを再入力してください" wire:model="password_confirmation" required>
-            @error('password_confirmation')
-                <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
-            @enderror
+            <x-label for="password">{{ __('Confirm Password') }}</x-label>
+            <x-input type="password" id="password_confirmation" placeholder="パスワードを再入力してください" wire:model="password_confirmation" required />
+            <x-input-error :messages="$errors->get('password_confirmation')" />
         </div>
 
         <div class=" flex items-center justify-between">

@@ -46,7 +46,10 @@ class RegisterForm extends Component
 
         Auth::login($user);
 
-        session()->flash('success', '登録が完了しました。');
+        session()->flash('flashMessage', [
+            'type' => 'success',
+            'message' => '登録が完了しました。'
+        ]);
         
         return redirect()->route('home');
     }

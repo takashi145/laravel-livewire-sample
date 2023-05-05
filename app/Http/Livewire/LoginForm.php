@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -30,6 +29,10 @@ class LoginForm extends Component
 
         // 認証を試行し、成功した場合はホームページへリダイレクト
         if (Auth::attempt($credentials, $this->remember)) {
+            session()->flash('flashMessage', [
+                'type' => 'success',
+                'message' => 'ログインしました。'
+            ]);
             return redirect()->intended('home');
         } else {
             // 失敗した場合はエラーメッセージを表示

@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Livewire\LoginForm;
+use App\Http\Livewire\RegisterForm;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,11 +20,12 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    });
+    Route::get('/home', function () {
+        return view('home');
+    })->name('home');
 });
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/login', LoginForm::class);
+    Route::get('/login', LoginForm::class)->name('login');
+    Route::get('/register', RegisterForm::class)->name('register');
 });

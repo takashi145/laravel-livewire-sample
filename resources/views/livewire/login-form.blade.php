@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit.prevent="login" class="py-6">
+    <form wire:submit.prevent="login" class="py-3">
         @if (session()->has('error'))
             <div class="bg-red-500 text-white p-4 mb-4 rounded">
                 {{ session('error') }}
@@ -28,7 +28,9 @@
             </div>
         </div>
 
-        <div class="flex items-center justify-start">
+        <div class="flex items-center justify-between">
+            <a href="{{ route('register') }}" class="text-sm text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-500 hover:underline">{{ __("Don't have an account?") }}</a>
+
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 {{ __('Login')}}
             </button>

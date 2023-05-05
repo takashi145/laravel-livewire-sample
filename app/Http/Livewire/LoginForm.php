@@ -24,7 +24,7 @@ class LoginForm extends Component
         ];
 
         if (Auth::attempt($credentials, $this->remember)) {
-            return redirect()->intended('dashboard');
+            return redirect()->intended('home');
         } else {
             session()->flash('error', '認証に失敗しました。メールアドレスとパスワードを確認してください。');
         }

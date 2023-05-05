@@ -35,7 +35,7 @@ class RegisterForm extends Component
 
         session()->flash('success', '登録が完了しました。');
         
-        return redirect()->route('dashboard');
+        return redirect()->route('home');
     }
 
     public function render()

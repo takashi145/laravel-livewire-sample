@@ -11,9 +11,19 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <script>
+            const dark = JSON.parse(localStorage.getItem('dark')) ?? false
+            if (dark) {
+                document.documentElement.classList.add('dark')
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        </script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -25,6 +35,8 @@
                 @yield('content')
             </main>
         </div>
+        
+        <x-dark-mode class="fixed bottom-3 right-3" />
 
         @livewireScripts
     </body>

@@ -21,7 +21,7 @@
     x-transition:leave-start="translate-x-0"
     x-transition:leave-end="translate-x-full"
     x-cloak
-    class="fixed z-50 top-6 right-3 max-w-full text-white px-4 py-2 rounded shadow-md hover:cursor-pointer {{ $classes[$type] }}">
+    class="fixed z-50 top-12 right-3 max-w-full text-white px-4 py-2 rounded shadow-md hover:cursor-pointer {{ $classes[$type] }}">
     <div>{{ session('flashMessage.message') }}</div>
 </div>
 @endif

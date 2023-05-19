@@ -15,9 +15,9 @@
         @livewireStyles
     </head>
     <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col items-center pt-20 bg-gray-100 dark:bg-gray-900">
+        <div class="min-h-screen flex flex-col items-center pt-32 bg-gray-100 dark:bg-gray-900">
             <a href="/" class="text-white mb-6 text-3xl">
-                <x-application-logo />
+                <x-application-logo class="w-24" />
             </a>
             <div class="w-full max-w-md px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden rounded-lg">
                 @yield('content')

@@ -35,8 +35,6 @@
                 @yield('content')
             </main>
         </div>
-        
-        <x-dark-mode class="fixed bottom-3 right-3" />
 
         @livewireScripts
     </body>

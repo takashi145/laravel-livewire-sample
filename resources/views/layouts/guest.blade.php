@@ -31,7 +31,7 @@
                 <x-application-logo class="w-24" />
             </a>
 
-            <x-dark-mode class="absolute top-3 right-3" />
+            <!-- <x-dark-mode class="absolute top-3 right-3" /> -->
             
             <div class="w-full max-w-md px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden rounded-lg">
                 @yield('content')

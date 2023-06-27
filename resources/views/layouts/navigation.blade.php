@@ -59,7 +59,9 @@
                             <a href="#" class="w-6 h-6 text-gray-500 hover:underline transition duration-75 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">- Services</a>
                         </li>
                     </ul>
+                    
                 </div>
+                
             </div>
             
             <div class="hidden w-full md:flex justify-start items-center order-1">
@@ -74,6 +76,7 @@
                         <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:text-blue-700 md:p-0 dark:text-white dark:hover:text-blue-500 dark:border-gray-700">Services</a>
                     </li>
                 </ul>
+                
             </div>
         </div>
     </div>
